@@ -1,0 +1,30 @@
+{
+  "name": "hero-multirangeslider",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "author": "Alexander Widmer",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn run dev",
+    "build": "rollup -c",
+    "dev": "rollup -c -w && yarn run scss",
+    "scss": "node-sass src/hero-multirangeslider.scss -o dist",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "prettier": "prettier es6 --write \"{src/*,tests/*,rollup.config}.js\""
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.3.4",
+    "deepmerge": "^3.2.0",
+    "eslint": "^5.15.3",
+    "jest": "^24.5.0",
+    "moment": "^2.24.0",
+    "rollup": "^1.6.0",
+    "rollup-plugin-sass": "^1.1.0",
+    "rollup-plugin-terser": "^4.0.4"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "node-sass": "^4.11.0"
+  }
+}

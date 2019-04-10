@@ -1,0 +1,13 @@
+var has = Object.prototype.hasOwnProperty;
+
+export function getEventProperty(prop, event) {
+    return has.call(event, prop) ? event[prop]
+        : event.originalEvent && event.originalEvent.touches ? event.originalEvent.touches[0][prop]
+            : undefined;
+}
+
+export function getEvtX(prop, event) {
+    return has.call(event, prop) ? event[prop]
+        : event.originalEvent && has.call(event.originalEvent, 'touches') ? event.originalEvent.touches[0][prop]
+            : 0;
+}
