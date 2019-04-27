@@ -115,6 +115,7 @@ var HeroMultirangeslider = (function ($) {
           this.perant = options.perant;
 
           if (this.options.rangeClass) this.$el.addClass(this.options.rangeClass);
+          if (this.options.modelId) this.$el.attr('data-model-id', this.options.modelId);
 
           if (!this.readonly()) {
               this.$el.prepend('<div class="hero-handle">').append('<div class="hero-handle">');
@@ -568,7 +569,7 @@ var HeroMultirangeslider = (function ($) {
           }
       }
 
-      addRange(range, data) {
+      addRange(range, data, modelId) {
           var $range = new Range({
               perant: this,
               snap: this.options.snap ? this.abnormaliseRaw(this.options.snap + this.options.min) : null,
@@ -576,7 +577,8 @@ var HeroMultirangeslider = (function ($) {
               rangeClass: this.options.rangeClass,
               minSize: this.options.minSize ? this.abnormaliseRaw(this.options.minSize + this.options.min) : null,
               readonly: this.options.readonly,
-              htmlLabel: this.options.htmlLabel
+              htmlLabel: this.options.htmlLabel,
+              modelId: modelId ? modelId : null,
           });
 
           if (this.options.data) {

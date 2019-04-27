@@ -11,6 +11,7 @@ export default class Range extends Base {
         this.perant = options.perant;
 
         if (this.options.rangeClass) this.$el.addClass(this.options.rangeClass);
+        if (this.options.modelId) this.$el.attr('data-model-id', this.options.modelId);
 
         if (!this.readonly()) {
             this.$el.prepend('<div class="hero-handle">').append('<div class="hero-handle">');
